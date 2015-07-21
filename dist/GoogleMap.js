@@ -1,21 +1,21 @@
 (function() {
-  var __bind = function(fn, me){ return function(){ return fn.apply(me, arguments); }; },
-    __hasProp = {}.hasOwnProperty,
-    __extends = function(child, parent) { for (var key in parent) { if (__hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; };
+  var bind = function(fn, me){ return function(){ return fn.apply(me, arguments); }; },
+    extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
+    hasProp = {}.hasOwnProperty;
 
-  define(["async!https://maps.googleapis.com/maps/api/js?v=3&sensor=true"], function() {
+  define(["async!https://maps.googleapis.com/maps/api/js?v=3&sensor=true&libraries=geometry"], function() {
     var GoogleMap;
-    return GoogleMap = (function(_super) {
-      __extends(GoogleMap, _super);
+    return GoogleMap = (function(superClass) {
+      extend(GoogleMap, superClass);
 
       function GoogleMap(el, options) {
         var defaultOptions, key, val;
         this.el = el;
         this.options = options != null ? options : {};
-        this.addMarkerImage = __bind(this.addMarkerImage, this);
-        this.addMarker = __bind(this.addMarker, this);
-        this.panBy = __bind(this.panBy, this);
-        this.addEvent = __bind(this.addEvent, this);
+        this.addMarkerImage = bind(this.addMarkerImage, this);
+        this.addMarker = bind(this.addMarker, this);
+        this.panBy = bind(this.panBy, this);
+        this.addEvent = bind(this.addEvent, this);
         defaultOptions = {
           center: new google.maps.LatLng(0, 0),
           zoom: 2,

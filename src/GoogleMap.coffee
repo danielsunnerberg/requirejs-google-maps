@@ -1,5 +1,5 @@
 ## Google Maps Module
-define ["async!https://maps.googleapis.com/maps/api/js?v=3&sensor=true"],  () ->
+define ["async!https://maps.googleapis.com/maps/api/js?v=3&sensor=true&libraries=geometry"],  () ->
 	class GoogleMap extends google.maps.Map
 		constructor: (@el, @options = {}) ->
 			defaultOptions = 
